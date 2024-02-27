@@ -4,6 +4,10 @@ body {
     height: 100vh;
 }
 
+body.isScrollNotAllowed {
+    overflow: hidden;
+}
+
 header {
     background: #4d53c3;
 }
@@ -26,10 +30,16 @@ section {
     width: 100%;
     height: 33%;
     background: #7fd08d;
+    padding: 10px;
 }
 
 section > h2 {
-    margin: 10px;
+    color: white;
+}
+
+section > button {
+    background: #4d53c3;
+    color: white;
 }
 
 footer {
@@ -60,6 +70,16 @@ a {
     padding: 32px;
     color: #fff;
     background-color: #6ba6e7;
+    overflow-wrap: normal;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
+  .modalIsOpen {
+    visibility: visible;
+    opacity: 1;
+    overflow-y: scroll;
   }
   
   .overlay {
@@ -70,4 +90,12 @@ a {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
+  .overlayIsOpen {
+    visibility: visible;
+    opacity: 1;
   }
